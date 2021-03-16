@@ -65,48 +65,51 @@ app.command('/whoami', async ({ command, ack, say }) => {
         `Select Id, Name, Phone, Email, Profile.Name FROM User WHERE ID='${userId}'`
     );
     console.log(result);
-
-    await say({
-        blocks: [
-            {
-                type: 'section',
-                fields: [
-                    {
-                        type: 'mrkdwn',
-                        text: '*Name*'
-                    },
-                    {
-                        type: 'mrkdwn',
-                        text: '*Email*'
-                    },
-                    {
-                        type: 'mrkdwn',
-                        text: '*Profile*'
-                    },
-                    {
-                        type: 'mrkdwn',
-                        text: 'Phone'
-                    },
-                    {
-                        type: 'plain_text',
-                        text: result.records[0].Name
-                    },
-                    {
-                        type: 'plain_text',
-                        text: result.records[0].Email
-                    },
-                    {
-                        type: 'plain_text',
-                        text: result.records[0].Profile.Name
-                    },
-                    {
-                        type: 'plain_text',
-                        text: result.records[0].Phone
-                    }
-                ]
-            }
-        ]
-    });
+    try {
+        await say({
+            blocks: [
+                {
+                    type: 'section',
+                    fields: [
+                        {
+                            type: 'mrkdwn',
+                            text: '*Name*'
+                        },
+                        {
+                            type: 'mrkdwn',
+                            text: '*Email*'
+                        },
+                        {
+                            type: 'mrkdwn',
+                            text: '*Profile*'
+                        },
+                        {
+                            type: 'mrkdwn',
+                            text: 'Phone'
+                        },
+                        {
+                            type: 'plain_text',
+                            text: result.records[0].Name
+                        },
+                        {
+                            type: 'plain_text',
+                            text: result.records[0].Email
+                        },
+                        {
+                            type: 'plain_text',
+                            text: result.records[0].Profile.Name
+                        },
+                        {
+                            type: 'plain_text',
+                            text: result.records[0].Phone
+                        }
+                    ]
+                }
+            ]
+        });
+    } catch (e) {
+        console.log(e);
+    }
 });
 
 receiver.router.get('/salesforce/oauth_redirect', async (req, res) => {
