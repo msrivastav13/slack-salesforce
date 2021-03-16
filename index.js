@@ -64,6 +64,7 @@ app.command('/whoami', async ({ command, ack, say }) => {
     const result = await connection.query(
         `Select Id, Name, Phone, Email, Profile.Name FROM User WHERE ID='${userId}'`
     );
+    console.log(result);
 
     await say({
         blocks: [
@@ -71,7 +72,7 @@ app.command('/whoami', async ({ command, ack, say }) => {
                 type: 'section',
                 fields: [
                     {
-                        type: 'Name',
+                        type: 'mrkdwn',
                         text: '*Name*'
                     },
                     {
@@ -100,7 +101,7 @@ app.command('/whoami', async ({ command, ack, say }) => {
                     },
                     {
                         type: 'plain_text',
-                        text: result.records[0].Profile.Phone
+                        text: result.records[0].Phone
                     }
                 ]
             }
