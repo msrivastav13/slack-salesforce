@@ -78,6 +78,14 @@ app.command('/whoami', async ({ command, ack, say }) => {
                         {
                             type: 'mrkdwn',
                             text: '*Email*'
+                        },
+                        {
+                            type: 'plain_text',
+                            text: `'${result.records[0].Name}'`
+                        },
+                        {
+                            type: 'plain_text',
+                            text: `'${result.records[0].Email}'`
                         }
                     ]
                 }
