@@ -62,7 +62,7 @@ app.command('/whoami', async ({ command, ack, say }) => {
     await ack();
     const userId = connection.userInfo.id;
     const result = await connection.query(
-        `Select Id, Name, Phone, Email, Profile.Name FROM User WHERE ID=${userId}`
+        `Select Id, Name, Phone, Email, Profile.Name FROM User WHERE ID='${userId}'`
     );
 
     await say({
