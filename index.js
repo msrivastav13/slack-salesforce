@@ -37,7 +37,7 @@ const receiver = new ExpressReceiver({
             success: async (installation, installOptions, req, res) => {
                 try {
                     // Web based OAuth 2.0 with Salesforce upon Install
-                    const salesforce_url = `https://login.salesforce.com/services/oauth2/authorize?client_id=${process.env.SALESFORCE_CLIENT_ID}&redirect_uri=${process.env.SLACK_REDIRECT_URL}&response_type=code`;
+                    const salesforce_url = `https://login.salesforce.com/services/oauth2/authorize?client_id=${process.env.SALESFORCE_CLIENT_ID}&redirect_uri=${process.env.SALESFORCE_REDIRECT_URL}&response_type=code`;
                     res.redirect(salesforce_url);
                 } catch (error) {
                     throw error;
