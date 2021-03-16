@@ -7,7 +7,7 @@ const oauth2 = new jsforce.OAuth2({
     // loginUrl : 'https://test.salesforce.com',
     clientId: process.env.SALESFORCE_CLIENT_ID,
     clientSecret: process.env.SALESFORCE_CLIENT_SECRET,
-    redirectUri: 'https://94d7e0bbbc0e.ngrok.io/salesforce/oauth_redirect'
+    redirectUri: process.env.SALESFORCE_REDIRECT_URL
 });
 const connection = new jsforce.Connection({ oauth2: oauth2 });
 
