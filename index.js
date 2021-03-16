@@ -80,20 +80,20 @@ app.command('/whoami', async ({ command, ack, say }) => {
                             text: '*Email*'
                         },
                         {
-                            type: 'mrkdwn',
-                            text: '*Profile*'
-                        },
-                        {
-                            type: 'mrkdwn',
-                            text: 'Phone'
-                        },
-                        {
                             type: 'plain_text',
                             text: result.records[0].Name
                         },
                         {
                             type: 'plain_text',
                             text: result.records[0].Email
+                        },
+                        {
+                            type: 'mrkdwn',
+                            text: '*Profile*'
+                        },
+                        {
+                            type: 'mrkdwn',
+                            text: '*Phone*'
                         },
                         {
                             type: 'plain_text',
