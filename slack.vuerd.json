@@ -1,0 +1,883 @@
+{
+  "canvas": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 11.11111068725586,
+    "scrollLeft": 121.52777099609375,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "PostgreSQL",
+    "databaseName": "SLACK AUTH",
+    "canvasType": "ERD",
+    "language": "Scala",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    }
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Enteprise",
+        "comment": "An enterprise in Slack is the central entity of Slack’s Enterprise grid plan.",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "Unique across all of Slack",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 151,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9f33a4c9-b9da-5cf8-ba50-4f9e7f23559c"
+          },
+          {
+            "name": "NAME",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "aa2a0109-b671-997d-dabb-6388d1b5a2b6"
+          },
+          {
+            "name": "CREATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "e3791471-6300-5fc9-dee1-e1c7e976d206"
+          },
+          {
+            "name": "UPDATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "10a09e69-324d-d35c-176c-3c4a2e71953f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 103,
+          "top": 128,
+          "zIndex": 506,
+          "widthName": 60,
+          "widthComment": 419
+        },
+        "id": "425e26c8-a06b-fde3-77f9-86c94a63a4c9"
+      },
+      {
+        "name": "WorkSpace",
+        "comment": "It’s a foundational Slack entity and many Slack entities strongly relate back to the workspace",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e516a5db-4830-df99-c1c2-ccd41e5db5a0"
+          },
+          {
+            "name": "NAME",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e5a34227-6ea6-f81f-4bb9-2f3d89cd04d1"
+          },
+          {
+            "name": "ISAPPINSTALLED",
+            "comment": "",
+            "dataType": "boolean",
+            "default": "FALSE",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 110,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "164a0f87-8051-d6d8-d603-6d4ef73e7258"
+          },
+          {
+            "name": "CREATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "83188973-00a7-c47a-655d-ed5655792b9a"
+          },
+          {
+            "name": "UPDATEDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 88,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "27b2a783-0ae2-7491-968c-9cebba76c902"
+          },
+          {
+            "name": "ENTERPRISEID",
+            "comment": "Unique across all of Slack",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 98,
+              "widthComment": 151,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "944b2952-0b00-886b-5b3d-b0ff07e1e55b"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 42,
+          "top": 374,
+          "zIndex": 495,
+          "widthName": 69,
+          "widthComment": 533
+        },
+        "id": "ec65e811-77b9-3b78-42f7-c1fae69b13fd"
+      },
+      {
+        "name": "GlobalUser",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "10d1357e-de72-9c6b-91bd-4e24d2572f47"
+          },
+          {
+            "name": "SLACKGLOBALUSERID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 146,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d106174d-2e8c-43d7-2322-b5d034fd3102"
+          },
+          {
+            "name": "CREATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "b8f3597a-47c0-04e3-8b5f-f80424ad47db"
+          },
+          {
+            "name": "UPDATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "24e89a34-df81-aabd-ade7-14f29a602b91"
+          },
+          {
+            "name": "ENTERPRISEID",
+            "comment": "Unique across all of Slack",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 98,
+              "widthComment": 151,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "74b40a18-7b11-2bfe-cf8b-6a8051aeab2b"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 704,
+          "top": 117.66666603088379,
+          "zIndex": 494,
+          "widthName": 67,
+          "widthComment": 60
+        },
+        "id": "e9d878fc-007c-cf13-d013-d81c95d05c89"
+      },
+      {
+        "name": "BotUser",
+        "comment": "Slack creates a bot user on the workspace",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a3ecfbf2-18ee-bf1c-abab-c173a68f7511"
+          },
+          {
+            "name": "SCOPE",
+            "comment": "",
+            "dataType": "character varying",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 102,
+              "widthDefault": 60
+            },
+            "id": "7bc46bbb-9250-a964-b301-8582661f0496"
+          },
+          {
+            "name": "ACCESSTOKEN",
+            "comment": "",
+            "dataType": "character varying",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 100,
+              "widthComment": 60,
+              "widthDataType": 102,
+              "widthDefault": 60
+            },
+            "id": "6b3e601e-f0a5-e2a6-09e5-0eaec87cbc8f"
+          },
+          {
+            "name": "BOTUSERID",
+            "comment": "",
+            "dataType": "character varying",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 78,
+              "widthComment": 60,
+              "widthDataType": 102,
+              "widthDefault": 60
+            },
+            "id": "77625365-419e-8fd5-8cbb-a8d1ec942335"
+          },
+          {
+            "name": "CREATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "c893695d-2a67-341e-6e5c-58c7f9713d9c"
+          },
+          {
+            "name": "UPDATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "4cb1f828-6cbd-7ae9-fc33-0b99000a7e4b"
+          },
+          {
+            "name": "WorkspaceID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 80,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "245d5fa0-7f25-f9d9-3906-cd72eb499ab0"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 145,
+          "top": 667,
+          "zIndex": 492,
+          "widthName": 60,
+          "widthComment": 247
+        },
+        "id": "860ebc81-7077-6b76-0c6e-26d263c6d48c"
+      },
+      {
+        "name": "LocalUser",
+        "comment": "Local User of the Slack",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4c4af57f-d5ce-088c-faab-03e07c164945"
+          },
+          {
+            "name": "LOCALUSERID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 94,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "07f71d65-4938-4e92-3966-114d5c3f9f99"
+          },
+          {
+            "name": "CREATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "b60e4fd9-c65b-aec3-0676-409e7a12a91e"
+          },
+          {
+            "name": "UPDATEDDATE",
+            "comment": "",
+            "dataType": "timestamptz",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97,
+              "widthComment": 60,
+              "widthDataType": 72,
+              "widthDefault": 60
+            },
+            "id": "c1faf1b4-79d1-d7a4-d75c-5aedba7008fc"
+          },
+          {
+            "name": "WORKSPACEID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 98,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a6776a1e-fdc9-819a-7dfb-aa94088f52cf"
+          },
+          {
+            "name": "GLOBALUSERID",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 103,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "dd691721-3656-9d6b-4ca6-71d959d50288"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 773,
+          "top": 374,
+          "zIndex": 505,
+          "widthName": 61,
+          "widthComment": 136
+        },
+        "id": "401c67aa-e955-ff5b-95f6-ecddc93c2d79"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "start": {
+          "tableId": "425e26c8-a06b-fde3-77f9-86c94a63a4c9",
+          "columnIds": [
+            "9f33a4c9-b9da-5cf8-ba50-4f9e7f23559c"
+          ],
+          "x": 358.5,
+          "y": 279,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "ec65e811-77b9-3b78-42f7-c1fae69b13fd",
+          "columnIds": [
+            "944b2952-0b00-886b-5b3d-b0ff07e1e55b"
+          ],
+          "x": 359,
+          "y": 374,
+          "direction": "top"
+        },
+        "id": "cbb00147-b6a7-ad51-943f-654b23782b0d",
+        "relationshipType": "OneN"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "425e26c8-a06b-fde3-77f9-86c94a63a4c9",
+          "columnIds": [
+            "9f33a4c9-b9da-5cf8-ba50-4f9e7f23559c"
+          ],
+          "x": 614,
+          "y": 203.5,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "e9d878fc-007c-cf13-d013-d81c95d05c89",
+          "columnIds": [
+            "74b40a18-7b11-2bfe-cf8b-6a8051aeab2b"
+          ],
+          "x": 704,
+          "y": 203.4166660308838,
+          "direction": "left"
+        },
+        "id": "09f91f5a-a60c-bce8-3482-12812a4c4b36",
+        "relationshipType": "OneN"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "ec65e811-77b9-3b78-42f7-c1fae69b13fd",
+          "columnIds": [
+            "e516a5db-4830-df99-c1c2-ccd41e5db5a0"
+          ],
+          "x": 359,
+          "y": 566,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "860ebc81-7077-6b76-0c6e-26d263c6d48c",
+          "columnIds": [
+            "245d5fa0-7f25-f9d9-3906-cd72eb499ab0"
+          ],
+          "x": 359.5,
+          "y": 667,
+          "direction": "top"
+        },
+        "id": "a355fa4d-e504-0ef4-992a-0825e9e03dcd",
+        "relationshipType": "OneN"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "ec65e811-77b9-3b78-42f7-c1fae69b13fd",
+          "columnIds": [
+            "e516a5db-4830-df99-c1c2-ccd41e5db5a0"
+          ],
+          "x": 676,
+          "y": 470,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "401c67aa-e955-ff5b-95f6-ecddc93c2d79",
+          "columnIds": [
+            "a6776a1e-fdc9-819a-7dfb-aa94088f52cf"
+          ],
+          "x": 773,
+          "y": 470,
+          "direction": "left"
+        },
+        "id": "c7f105b8-c3d8-30b6-7474-93b614d3d731",
+        "relationshipType": "OneN"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "e9d878fc-007c-cf13-d013-d81c95d05c89",
+          "columnIds": [
+            "10d1357e-de72-9c6b-91bd-4e24d2572f47"
+          ],
+          "x": 972,
+          "y": 289.1666660308838,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "401c67aa-e955-ff5b-95f6-ecddc93c2d79",
+          "columnIds": [
+            "dd691721-3656-9d6b-4ca6-71d959d50288"
+          ],
+          "x": 974,
+          "y": 374,
+          "direction": "top"
+        },
+        "id": "7f8b958e-cb85-7a70-1e06-c64fb17ec0cc",
+        "relationshipType": "OneN"
+      }
+    ]
+  }
+}

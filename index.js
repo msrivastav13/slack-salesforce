@@ -36,9 +36,32 @@ const receiver = new ExpressReceiver({
         callbackOptions: {
             success: async (installation, installOptions, req, res) => {
                 try {
-                    // Web based OAuth 2.0 with Salesforce upon Install
-                    const salesforce_url = `https://login.salesforce.com/services/oauth2/authorize?client_id=${process.env.SALESFORCE_CLIENT_ID}&redirect_uri=${process.env.SALESFORCE_REDIRECT_URL}&response_type=code`;
-                    res.redirect(salesforce_url);
+                    await say({
+                        blocks: [
+                            {
+                                "type": "section",
+                                "text": {
+                                    "type": "mrkdwn",
+                                    "text": "To login into Salesforce click the button below"
+                                }
+                            },
+                            {
+                                "type": "actions",
+                                "elements": [
+                                    {
+                                        "type": "button",
+                                        "text": {
+                                            "type": "plain_text",
+                                            "text": "Authorize Salesforce"
+                                        },
+                                        "value": "authsfdc",
+                                        "action_id": "authsf"
+                                    }
+                                ]
+                            }
+                        ]
+                    })
+                    res.send('The app is successfully installed! You can close this window!!!!');
                 } catch (error) {
                     throw error;
                 }
@@ -48,7 +71,7 @@ const receiver = new ExpressReceiver({
                 res.send('failure');
             }
         }
-    }
+    },
 });
 
 // Instantiate Slack App with Custom Reciever
@@ -102,7 +125,7 @@ app.command('/whoami', async ({ command, ack, say }) => {
                         {
                             type: 'plain_text',
                             text: `${result.records[0].Profile.Name}`
-                        },
+                        }
                     ]
                 }
             ]
